@@ -5,17 +5,30 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp">
+    android:background="#F1F5F9">
 
+    <!-- Header Navy yang lebih proporsional -->
+    <View
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="#1E3A8A"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Area Judul dan Deskripsi -->
     <TextView
         android:id="@+id/tvJudulHalaman"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Destinasi Populer"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="56dp"
+        android:text="Detail Pengaduan"
         android:textColor="#FFFFFF"
         android:textSize="26sp"
         android:textStyle="bold"
+        android:letterSpacing="0.01"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,61 +36,107 @@
         android:id="@+id/tvDeskripsiHalaman"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Deskripsi destinasi muncul di sini"
-        android:textColor="#E0E0E0"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="24dp"
+        android:text="Pantau status aspirasi yang Anda sampaikan"
+        android:textColor="#CBD5E1"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvJudulHalaman"
         app:layout_constraintTop_toBottomOf="@id/tvJudulHalaman" />
 
+    <!-- Card Gambar Bukti dengan Elevasi lebih halus -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardImage"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="24dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="8dp"
+        android:layout_height="220dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="10dp"
         app:layout_constraintTop_toBottomOf="@id/tvDeskripsiHalaman">
 
         <ImageView
-            android:id="@+id/imgDestinasi"
+            android:id="@+id/imgLaporan"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:background="#DDDDDD" />
+            android:src="@android:drawable/ic_menu_gallery"
+            android:background="#E2E8F0"
+            android:padding="20dp"
+            app:tint="#94A3B8" />
 
     </androidx.cardview.widget.CardView>
 
+    <!-- Card Detail Informasi yang lebih terstruktur -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
         android:layout_marginTop="20dp"
-        app:cardBackgroundColor="#26FFFFFF"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="0dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="2dp"
         app:layout_constraintTop_toBottomOf="@id/cardImage">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="24dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Raja Ampat, Papua"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
+                android:text="Perbaikan Infrastruktur Jalan"
+                android:textColor="#1E293B"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
+            <View
+                android:layout_width="40dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="10dp"
+                android:background="#2563EB" />
+
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Nikmati keindahan gugusan pulau karang dan keanekaragaman hayati laut terbaik di dunia bersama Mata Cantik Travel."
-                android:textColor="#FFFFFF"
-                android:textSize="14sp" />
+                android:layout_marginTop="18dp"
+                android:text="Laporan mengenai kerusakan jalan lintas desa yang menghambat mobilitas warga. Mohon segera ditindaklanjuti oleh dinas terkait melalui platform Suara Rakyat."
+                android:textColor="#475569"
+                android:lineSpacingExtra="6dp"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="20dp"
+                android:background="#F1F5F9" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@android:color/holo_blue_dark"
+                    android:backgroundTint="#2563EB" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Status: Diproses"
+                    android:textColor="#2563EB"
+                    android:textStyle="bold"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

@@ -12,11 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectMobile">
         <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AuthActivity"
+            android:exported="false"/>
+
+        <activity
             android:name=".Pertemuan4.Custom2Activity"
             android:exported="false" />
         <activity
             android:name=".Pertemuan4.DashboardActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".Pertemuan4.Custom1Activity"
             android:exported="false" />
@@ -31,13 +44,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

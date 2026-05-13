@@ -2,67 +2,56 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Pertemuan4.DashboardActivity">
+    android:background="#F1F5F9">
 
+    <!-- Header Background (Biru Navy) -->
     <View
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginBottom="-75dp"
-        android:layout_marginStart="-30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:id="@+id/headerBackground"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="#1E3A8A"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/layoutHeader"
+    <!-- Judul Header -->
+    <TextView
+        android:id="@+id/tvJudulHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        android:text="Mata Cantik Travel"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="12dp"
-            app:tint="#FFFFFF" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Travel Menu"
-            android:textColor="#FFFFFF"
-            android:textSize="28sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvSubtitle"
+        android:id="@+id/tvSubHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="Sila pilih perkhidmatan anda"
-        android:textColor="#CCFFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layoutHeader" />
+        android:textColor="#CBD5E1"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/tvJudulHeader"
+        app:layout_constraintTop_toBottomOf="@id/tvJudulHeader" />
 
+    <!-- Card Container untuk Menu Navigasi -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
-        app:cardBackgroundColor="#26FFFFFF"
+        android:layout_marginTop="24dp"
+        app:cardBackgroundColor="#FFFFFF"
         app:cardCornerRadius="24dp"
-        app:cardElevation="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvSubtitle"
-        app:layout_constraintVertical_bias="0.4">
+        app:cardElevation="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tvSubHeader">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,60 +59,78 @@
             android:orientation="vertical"
             android:padding="24dp">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menu Layanan"
+                android:textColor="#1E293B"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Tombol 1: Rumus Bangun Ruang -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnRumus"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="12dp"
                 android:text="Rumus Bangun Ruang"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                app:backgroundTint="#FF5E1F"
-                app:cornerRadius="12dp" />
+                android:textSize="15sp"
+                app:backgroundTint="#2563EB"
+                app:cornerRadius="12dp"
+                app:icon="@android:drawable/ic_menu_edit"
+                app:iconGravity="textStart" />
 
+            <!-- Tombol 2: Destinasi Populer -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCustom1"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginBottom="16dp"
-                android:text="Destinasi Popular"
+                android:layout_marginBottom="12dp"
+                android:text="Destinasi Populer"
                 android:textAllCaps="false"
-                android:textColor="#FFFFFF"
+                android:textColor="#2563EB"
                 app:cornerRadius="12dp"
-                app:strokeColor="#FFFFFF"
-                app:strokeWidth="1.5dp" />
+                app:strokeColor="#2563EB"
+                app:strokeWidth="1.5dp"
+                app:icon="@android:drawable/ic_menu_gallery"
+                app:iconTint="#2563EB" />
 
+            <!-- Tombol 3: Promo Eksklusif -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCustom2"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="20dp"
                 android:text="Promo Eksklusif"
                 android:textAllCaps="false"
-                android:textColor="#FFFFFF"
+                android:textColor="#2563EB"
                 app:cornerRadius="12dp"
-                app:strokeColor="#FFFFFF"
-                app:strokeWidth="1.5dp" />
+                app:strokeColor="#2563EB"
+                app:strokeWidth="1.5dp"
+                app:icon="@android:drawable/ic_menu_send"
+                app:iconTint="#2563EB" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginBottom="24dp"
-                android:background="#40FFFFFF" />
+                android:layout_marginBottom="20dp"
+                android:background="#E2E8F0" />
 
+            <!-- Tombol 4: Logout -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogout"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Log Keluar"
+                android:text="Keluar Aplikasi"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
-                app:backgroundTint="#E53935"
-                app:cornerRadius="12dp"
-                app:iconGravity="textStart" />
+                app:backgroundTint="#DC2626"
+                app:cornerRadius="12dp" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

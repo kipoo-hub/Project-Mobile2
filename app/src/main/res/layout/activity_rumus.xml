@@ -5,7 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF9000">
+    android:background="#F1F5F9">
+
+    <!-- Header Background (Nuansa Biru Navy) -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#1E3A8A"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -34,18 +41,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="Hitung kebutuhan logistik perjalanan Anda"
-                android:textColor="#B3FFFFFF"
+                android:textColor="#CBD5E1"
                 android:textSize="14sp" />
 
+            <!-- Card Segitiga -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                app:cardBackgroundColor="#26FFFFFF"
+                app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="24dp"
-                app:cardElevation="0dp"
-                app:strokeColor="#40FFFFFF"
-                app:strokeWidth="1dp">
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -57,7 +64,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Luas Segitiga"
-                        android:textColor="#FF5E1F"
+                        android:textColor="#1E3A8A"
                         android:textStyle="bold" />
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -66,8 +73,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:hint="Masukkan Alas"
-                        app:hintTextColor="#FFFFFF"
-                        app:boxStrokeColor="#FFFFFF"
+                        app:hintTextColor="#64748B"
+                        app:boxStrokeColor="#2563EB"
                         app:boxCornerRadiusTopStart="12dp"
                         app:boxCornerRadiusBottomEnd="12dp">
 
@@ -76,7 +83,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="numberDecimal"
-                            android:textColor="#FFFFFF" />
+                            android:textColor="#1E293B" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -85,8 +92,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:hint="Masukkan Tinggi"
-                        app:hintTextColor="#FFFFFF"
-                        app:boxStrokeColor="#FFFFFF"
+                        app:hintTextColor="#64748B"
+                        app:boxStrokeColor="#2563EB"
                         app:boxCornerRadiusTopStart="12dp"
                         app:boxCornerRadiusBottomEnd="12dp">
 
@@ -95,7 +102,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="numberDecimal"
-                            android:textColor="#FFFFFF" />
+                            android:textColor="#1E293B" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.button.MaterialButton
@@ -105,20 +112,20 @@
                         android:layout_marginTop="16dp"
                         android:text="Hitung Luas"
                         android:textAllCaps="false"
-                        app:backgroundTint="#FF5E1F"
+                        app:backgroundTint="#2563EB"
                         app:cornerRadius="12dp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- Card Kubus -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                app:cardBackgroundColor="#26FFFFFF"
+                app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="24dp"
-                app:cardElevation="0dp"
-                app:strokeColor="#40FFFFFF"
-                app:strokeWidth="1dp">
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -130,7 +137,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Volume Kubus"
-                        android:textColor="#FF5E1F"
+                        android:textColor="#1E3A8A"
                         android:textStyle="bold" />
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -139,8 +146,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:hint="Masukkan Sisi"
-                        app:hintTextColor="#FFFFFF"
-                        app:boxStrokeColor="#FFFFFF"
+                        app:hintTextColor="#64748B"
+                        app:boxStrokeColor="#2563EB"
                         app:boxCornerRadiusTopStart="12dp"
                         app:boxCornerRadiusBottomEnd="12dp">
 
@@ -149,7 +156,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="numberDecimal"
-                            android:textColor="#FFFFFF" />
+                            android:textColor="#1E293B" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.button.MaterialButton
@@ -159,17 +166,18 @@
                         android:layout_marginTop="16dp"
                         android:text="Hitung Volume"
                         android:textAllCaps="false"
-                        app:backgroundTint="#FF5E1F"
+                        app:backgroundTint="#2563EB"
                         app:cornerRadius="12dp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- Section Hasil -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="40dp"
-                app:cardBackgroundColor="#1A000000"
+                app:cardBackgroundColor="#E2E8F0"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="0dp">
 
@@ -180,7 +188,7 @@
                     android:padding="24dp"
                     android:text="Hasil perhitungan akan muncul di sini"
                     android:textAlignment="center"
-                    android:textColor="#39FF14"
+                    android:textColor="#1E3A8A"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </com.google.android.material.card.MaterialCardView>
