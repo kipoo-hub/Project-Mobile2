@@ -22,7 +22,7 @@ class SplashScreenActivity : AppCompatActivity() {
         sharedPref = getSharedPreferences("UserSession", Context.MODE_PRIVATE)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            // Implementasi alur image_1cc141.png
+
             val isLogin = sharedPref.getBoolean("isLogin", false)
 
             if (isLogin) {

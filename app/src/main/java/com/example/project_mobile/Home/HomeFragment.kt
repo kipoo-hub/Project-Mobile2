@@ -31,12 +31,6 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Pastikan Toolbar di XML FragmentHome menggunakan ID yang berbeda (misal: toolbarHome)
-        // jika BaseActivity sudah memiliki toolbar utama untuk menghindari konflik.
-        val activity = requireActivity() as AppCompatActivity
-        activity.setSupportActionBar(binding.toolbar)
-        activity.supportActionBar?.title = "Home"
-
         // Setup Listener Klik untuk Navigasi
         setupNavigation()
     }

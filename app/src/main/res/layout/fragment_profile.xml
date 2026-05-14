@@ -5,21 +5,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1F5F9"
+    android:background="@color/bg_light"
     tools:context=".Profile.ProfileFragment">
 
-    <!-- Toolbar yang diinisialisasi di onViewCreated -->
+    <!-- Toolbar Utama -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#1E3A8A"
-        app:titleTextColor="#FFFFFF"
+        android:background="@color/blue_pcr"
+        app:titleTextColor="@color/white"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintBottom_toBottomOf="parent">
 
@@ -30,82 +31,106 @@
             android:padding="24dp"
             android:gravity="center_horizontal">
 
-            <!-- Avatar / Foto Profil -->
+            <!-- Avatar Pengembang -->
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ivAvatar"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
                 android:layout_marginTop="16dp"
                 android:src="@drawable/ic_launcher_foreground"
                 android:padding="2dp"
-                app:strokeColor="#1E3A8A"
-                app:strokeWidth="2dp"
+                android:scaleType="centerCrop"
+                app:strokeColor="@color/blue_pcr"
+                app:strokeWidth="3dp"
                 app:shapeAppearanceOverlay="@style/ShapeAppearance.MaterialComponents.SmallComponent" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Pengguna Bina Desa"
-                android:textColor="#1E293B"
-                android:textSize="20sp"
+                android:text="Muhammad Taufiq"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
-            <!-- Card Informasi Akun -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Developer &amp; Leader BetterDays"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+            <!-- Card Detail Informasi Pengembang -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="2dp"
+                app:cardElevation="4dp"
                 app:strokeWidth="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="20dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Informasi Akun"
+                        android:text="Informasi Akademik"
                         android:textStyle="bold"
-                        android:textColor="#1E3A8A" />
+                        android:textColor="@color/blue_pcr" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginVertical="12dp"
-                        android:background="#F1F5F9" />
+                        android:background="@color/bg_light" />
 
+                    <!-- NIM / Identitas -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Status"
+                        android:text="NIM / Jurusan"
                         android:textSize="12sp"
-                        android:textColor="#94A3B8" />
-
+                        android:textColor="@color/text_secondary" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mahasiswa Aktif"
-                        android:textColor="#334155"
+                        android:text="Sistem Informasi - PCR"
+                        android:textColor="@color/text_primary"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Peran Proyek -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fokus Keahlian"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Product Strategy &amp; UI/UX Research"
+                        android:textColor="@color/text_primary"
                         android:textStyle="bold" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Tombol Logout yang dipanggil di onViewCreated -->
+            <!-- Tombol Logout -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogout"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_marginTop="40dp"
+                android:layout_marginBottom="24dp"
                 android:text="Keluar dari Aplikasi"
                 android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                app:backgroundTint="#DC2626"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/red_logout"
                 app:cornerRadius="12dp"
                 app:icon="@android:drawable/ic_lock_power_off"
                 app:iconGravity="textStart" />
