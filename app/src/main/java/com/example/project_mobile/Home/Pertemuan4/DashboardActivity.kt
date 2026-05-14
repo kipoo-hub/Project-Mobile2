@@ -1,4 +1,4 @@
-package com.example.project_mobile.Pertemuan4
+package com.example.project_mobile.Home.Pertemuan4
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,8 +7,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.project_mobile.Pertemuan2.RumusActivity
-import com.example.project_mobile.Pertemuan3.ThirdActivity
+import com.example.project_mobile.Home.Pertemuan2.RumusActivity
+import com.example.project_mobile.Home.Pertemuan3.ThirdActivity
 import com.example.project_mobile.databinding.ActivityDashboardBinding
 import com.google.android.material.snackbar.Snackbar
 
@@ -33,15 +33,6 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         // --- Logika Navigasi Layanan Travel ---
-
-        // Tombol 1: Rumus Bangun Ruang (Layanan Utama)
-        binding.btnRumus.setOnClickListener {
-            pindahHalaman(
-                "Rumus Bangun Ruang",
-                "Pelajari berbagai rumus matematika bangun ruang untuk perjalanan edukasimu.",
-                RumusActivity::class.java
-            )
-        }
 
         // Tombol 2: Custom 1 (Layanan Tambahan)
         binding.btnCustom1.setOnClickListener {

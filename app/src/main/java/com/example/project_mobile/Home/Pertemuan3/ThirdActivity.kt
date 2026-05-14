@@ -1,5 +1,5 @@
 // 1. Sesuaikan package dengan folder tempat file ini berada (Pertemuan3)
-package com.example.project_mobile.Pertemuan3
+package com.example.project_mobile.Home.Pertemuan3
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 // 2. IMPORT YANG BENAR: Pastikan hanya mengimpor dari project_mobile
 import com.example.project_mobile.databinding.ActivityThirdBinding
 // Perhatikan: Pastikan DashboardActivity juga sudah dipindah ke project_mobile
-import com.example.project_mobile.Pertemuan4.DashboardActivity
+import com.example.project_mobile.Home.Pertemuan4.DashboardActivity
 
 class ThirdActivity : AppCompatActivity() {
 

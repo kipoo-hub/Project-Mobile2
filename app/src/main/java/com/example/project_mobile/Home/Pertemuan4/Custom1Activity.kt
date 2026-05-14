@@ -1,22 +1,22 @@
-package com.example.project_mobile.Pertemuan2
+package com.example.project_mobile.Home.Pertemuan4
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.project_mobile.databinding.ActivityRumusBinding
+import com.example.project_mobile.databinding.ActivityCustom1Binding
 
-class RumusActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityRumusBinding
+class Custom1Activity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityCustom1Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        // Inisialisasi Binding
-        binding = ActivityRumusBinding.inflate(layoutInflater)
+        binding = ActivityCustom1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
@@ -25,13 +25,15 @@ class RumusActivity : AppCompatActivity() {
             insets
         }
 
-        // --- MENERIMA DATA DARI INTENT ---
-        // Gunakan key yang sama dengan yang ada di DashboardActivity
+        // Menerima data Intent dari DashboardActivity
         val judul = intent.getStringExtra("EXTRA_TITLE")
         val deskripsi = intent.getStringExtra("EXTRA_DESC")
 
-        // Set data ke TextView
-        binding.tvJudulHalaman.text = judul ?: "Tidak ada judul"
-        binding.tvDeskripsiHalaman.text = deskripsi ?: "Tidak ada deskripsi"
+        // Menampilkan data ke UI
+        binding.tvJudulHalaman.text = judul ?: "Destinasi Populer"
+        binding.tvDeskripsiHalaman.text = deskripsi ?: "Jelajahi dunia bersama kami."
+
+        // Kamu bisa mengganti gambar secara dinamis jika mau:
+        // binding.imgDestinasi.setImageResource(R.drawable.nama_gambar_wisata)
     }
 }

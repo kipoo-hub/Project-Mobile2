@@ -68,20 +68,6 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="20dp"/>
 
-            <!-- Tombol 1: Rumus Bangun Ruang -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnRumus"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginBottom="12dp"
-                android:text="Rumus Bangun Ruang"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:textSize="15sp"
-                app:backgroundTint="#2563EB"
-                app:cornerRadius="12dp"
-                app:icon="@android:drawable/ic_menu_edit"
-                app:iconGravity="textStart" />
 
             <!-- Tombol 2: Destinasi Populer -->
             <com.google.android.material.button.MaterialButton

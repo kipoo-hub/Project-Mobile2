@@ -27,7 +27,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
             if (isLogin) {
                 // User sudah login -> MainActivity
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, BaseActivity::class.java))
             } else {
                 // User belum login -> AuthActivity
                 startActivity(Intent(this, AuthActivity::class.java))

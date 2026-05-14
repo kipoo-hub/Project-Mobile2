@@ -51,7 +51,7 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun pindahKeMain() {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, BaseActivity::class.java)
         startActivity(intent)
         finish() // Mengakhiri activity agar tidak bisa kembali ke halaman login
     }

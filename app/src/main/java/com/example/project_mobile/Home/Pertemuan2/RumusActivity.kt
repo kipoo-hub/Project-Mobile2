@@ -1,22 +1,22 @@
-package com.example.project_mobile.Pertemuan4
+package com.example.project_mobile.Home.Pertemuan2
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.project_mobile.databinding.ActivityCustom2Binding
+import com.example.project_mobile.databinding.ActivityRumusBinding
 
+class RumusActivity : AppCompatActivity() {
 
-class Custom2Activity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityCustom2Binding
+    private lateinit var binding: ActivityRumusBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        binding = ActivityCustom2Binding.inflate(layoutInflater)
+        // Inisialisasi Binding
+        binding = ActivityRumusBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
@@ -25,12 +25,13 @@ class Custom2Activity : AppCompatActivity() {
             insets
         }
 
-        // Tangkap data dari Dashboard
+        // --- MENERIMA DATA DARI INTENT ---
+        // Gunakan key yang sama dengan yang ada di DashboardActivity
         val judul = intent.getStringExtra("EXTRA_TITLE")
         val deskripsi = intent.getStringExtra("EXTRA_DESC")
 
-        // Set ke View
-        binding.tvJudulHalaman.text = judul ?: "Promo Spesial"
-        binding.tvDeskripsiHalaman.text = deskripsi ?: "Cek penawaran menarik kami."
+        // Set data ke TextView
+        binding.tvJudulHalaman.text = judul ?: "Tidak ada judul"
+        binding.tvDeskripsiHalaman.text = deskripsi ?: "Tidak ada deskripsi"
     }
 }
