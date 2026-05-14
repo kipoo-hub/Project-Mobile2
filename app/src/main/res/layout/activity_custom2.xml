@@ -12,7 +12,7 @@
         android:id="@+id/headerDecorator"
         android:layout_width="match_parent"
         android:layout_height="260dp"
-        android:background="#1E3A8A"
+        android:background="@color/blue_pcr"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -47,15 +47,16 @@
         app:layout_constraintTop_toBottomOf="@id/tvJudulHalaman" />
 
     <!-- Card Utama Promo -->
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardPromo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="32dp"
-        app:cardBackgroundColor="#2563EB"
-        app:cardCornerRadius="28dp"
+        app:cardBackgroundColor="@color/blue_pcr"
+        app:cardCornerRadius="32dp"
         app:cardElevation="12dp"
+        app:strokeWidth="0dp"
         app:layout_constraintTop_toBottomOf="@id/tvDeskripsiHalaman">
 
         <LinearLayout
@@ -69,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="DISKON HINGGA"
-                android:textColor="#BFDBFE"
+                android:textColor="#E0F7FA"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:letterSpacing="0.1" />
@@ -87,27 +88,28 @@
                 android:layout_width="60dp"
                 android:layout_height="2dp"
                 android:layout_marginVertical="12dp"
-                android:background="#60A5FA" />
+                android:background="#80FFFFFF" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tiket Pesawat &amp; Hotel"
-                android:textColor="#DBEAFE"
+                android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
     <!-- Card Informasi Kode Promo -->
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="20dp"
-        app:cardBackgroundColor="#FFFFFF"
-        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/blue_pcr"
+        app:cardCornerRadius="24dp"
         app:cardElevation="4dp"
+        app:strokeWidth="0dp"
         app:layout_constraintTop_toBottomOf="@id/cardPromo">
 
         <LinearLayout
@@ -120,10 +122,10 @@
             <ImageView
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:background="#EFF6FF"
+                android:background="#80FFFFFF"
                 android:padding="12dp"
                 android:src="@android:drawable/ic_menu_send"
-                app:tint="#2563EB" />
+                app:tint="@color/blue_pcr" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -136,7 +138,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Kode Promo: CANTIKTRAVEL"
-                    android:textColor="#1E293B"
+                    android:textColor="#FFFFFF"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -145,10 +147,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
                     android:text="Gunakan saat checkout pesanan."
-                    android:textColor="#64748B"
+                    android:textColor="#E0F7FA"
                     android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

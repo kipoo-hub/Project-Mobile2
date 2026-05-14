@@ -7,11 +7,11 @@
     android:layout_height="match_parent"
     android:background="#F1F5F9"> <!-- Latar belakang abu-abu terang yang bersih -->
 
-    <!-- Dekorasi Atas (Aksen Biru Navy) -->
+    <!-- Dekorasi Atas (Aksen Teal) -->
     <View
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:background="#1E3A8A"
+        android:background="@color/blue_pcr"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -49,35 +49,37 @@
             android:textColor="#CBD5E1"
             android:layout_marginBottom="40dp" />
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="#FFFFFF"
-            app:cardCornerRadius="24dp"
-            app:cardElevation="8dp"> <!-- Elevasi untuk kesan modern -->
+            app:cardBackgroundColor="@color/blue_pcr"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="8dp"
+            app:strokeWidth="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="24dp">
+                android:padding="32dp">
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email or Mobile Number"
-                    app:hintTextColor="#64748B"
-                    app:boxStrokeColor="#2563EB"
-                    app:boxCornerRadiusBottomEnd="12dp"
-                    app:boxCornerRadiusTopStart="12dp"
-                    app:startIconTint="#2563EB">
+                    app:hintTextColor="#E0F7FA"
+                    app:boxStrokeColor="#FFFFFF"
+                    app:boxCornerRadiusBottomEnd="16dp"
+                    app:boxCornerRadiusTopStart="16dp"
+                    app:startIconTint="#FFFFFF"
+                    app:boxStrokeWidth="1dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etUsername"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#1E293B" />
+                        android:textColor="#FFFFFF" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -86,20 +88,21 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:hint="Password"
-                    app:hintTextColor="#64748B"
-                    app:boxStrokeColor="#2563EB"
-                    app:boxCornerRadiusBottomEnd="12dp"
-                    app:boxCornerRadiusTopStart="12dp"
+                    app:hintTextColor="#E0F7FA"
+                    app:boxStrokeColor="#FFFFFF"
+                    app:boxCornerRadiusBottomEnd="16dp"
+                    app:boxCornerRadiusTopStart="16dp"
                     app:passwordToggleEnabled="true"
-                    app:passwordToggleTint="#64748B"
-                    app:startIconTint="#2563EB">
+                    app:passwordToggleTint="#E0F7FA"
+                    app:startIconTint="#FFFFFF"
+                    app:boxStrokeWidth="1dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etPassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
-                        android:textColor="#1E293B" />
+                        android:textColor="#FFFFFF" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.button.MaterialButton
@@ -110,8 +113,9 @@
                     android:text="LOG IN"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    app:backgroundTint="#2563EB"
-                    app:cornerRadius="12dp" />
+                    android:textColor="@color/blue_pcr"
+                    app:backgroundTint="#FFFFFF"
+                    app:cornerRadius="16dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -119,11 +123,11 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="16dp"
                     android:text="Forgot Password?"
-                    android:textColor="#2563EB"
+                    android:textColor="#FFFFFF"
                     android:textStyle="bold" />
 
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:layout_width="wrap_content"

@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pesan &amp; Aspirasi"
-        android:textColor="#1E3A8A"
+        android:textColor="@color/blue_pcr"
         android:textSize="22sp"
         android:textStyle="bold"
         android:layout_marginTop="32dp"

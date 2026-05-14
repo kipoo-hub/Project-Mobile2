@@ -7,11 +7,11 @@
     android:layout_height="match_parent"
     android:background="#F1F5F9">
 
-    <!-- Header Background (Nuansa Biru Navy) -->
+    <!-- Header Background (Nuansa Teal) -->
     <View
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="#1E3A8A"
+        android:background="@color/blue_pcr"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.core.widget.NestedScrollView
@@ -49,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                app:cardBackgroundColor="#FFFFFF"
+                app:cardBackgroundColor="@color/blue_pcr"
                 app:cardCornerRadius="24dp"
                 app:cardElevation="4dp"
                 app:strokeWidth="0dp">
@@ -64,7 +64,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Luas Segitiga"
-                        android:textColor="#1E3A8A"
+                        android:textColor="#FFFFFF"
                         android:textStyle="bold" />
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -73,17 +73,19 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:hint="Masukkan Alas"
-                        app:hintTextColor="#64748B"
-                        app:boxStrokeColor="#2563EB"
+                        app:hintTextColor="#E0F7FA"
+                        app:boxStrokeColor="#FFFFFF"
                         app:boxCornerRadiusTopStart="12dp"
-                        app:boxCornerRadiusBottomEnd="12dp">
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:placeholderTextColor="#E0F7FA"
+                        app:boxStrokeWidth="1dp">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etAlas"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="numberDecimal"
-                            android:textColor="#1E293B" />
+                            android:textColor="#FFFFFF" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -92,17 +94,18 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:hint="Masukkan Tinggi"
-                        app:hintTextColor="#64748B"
-                        app:boxStrokeColor="#2563EB"
+                        app:hintTextColor="#E0F7FA"
+                        app:boxStrokeColor="#FFFFFF"
                         app:boxCornerRadiusTopStart="12dp"
-                        app:boxCornerRadiusBottomEnd="12dp">
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxStrokeWidth="1dp">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etTinggi"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="numberDecimal"
-                            android:textColor="#1E293B" />
+                            android:textColor="#FFFFFF" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.button.MaterialButton
@@ -112,7 +115,8 @@
                         android:layout_marginTop="16dp"
                         android:text="Hitung Luas"
                         android:textAllCaps="false"
-                        app:backgroundTint="#2563EB"
+                        android:textColor="@color/blue_pcr"
+                        app:backgroundTint="#FFFFFF"
                         app:cornerRadius="12dp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -122,7 +126,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                app:cardBackgroundColor="#FFFFFF"
+                app:cardBackgroundColor="@color/blue_pcr"
                 app:cardCornerRadius="24dp"
                 app:cardElevation="4dp"
                 app:strokeWidth="0dp">
@@ -137,7 +141,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Volume Kubus"
-                        android:textColor="#1E3A8A"
+                        android:textColor="#FFFFFF"
                         android:textStyle="bold" />
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -146,17 +150,18 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:hint="Masukkan Sisi"
-                        app:hintTextColor="#64748B"
-                        app:boxStrokeColor="#2563EB"
+                        app:hintTextColor="#E0F7FA"
+                        app:boxStrokeColor="#FFFFFF"
                         app:boxCornerRadiusTopStart="12dp"
-                        app:boxCornerRadiusBottomEnd="12dp">
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxStrokeWidth="1dp">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etSisi"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="numberDecimal"
-                            android:textColor="#1E293B" />
+                            android:textColor="#FFFFFF" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.button.MaterialButton
@@ -166,7 +171,8 @@
                         android:layout_marginTop="16dp"
                         android:text="Hitung Volume"
                         android:textAllCaps="false"
-                        app:backgroundTint="#2563EB"
+                        android:textColor="@color/blue_pcr"
+                        app:backgroundTint="#FFFFFF"
                         app:cornerRadius="12dp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -177,8 +183,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="40dp"
-                app:cardBackgroundColor="#E2E8F0"
-                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="#E0F7FA"
+                app:cardCornerRadius="24dp"
                 app:cardElevation="0dp">
 
                 <TextView
@@ -188,7 +194,7 @@
                     android:padding="24dp"
                     android:text="Hasil perhitungan akan muncul di sini"
                     android:textAlignment="center"
-                    android:textColor="#1E3A8A"
+                    android:textColor="@color/blue_pcr"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </com.google.android.material.card.MaterialCardView>

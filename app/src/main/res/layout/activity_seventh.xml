@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#1E3A8A"
+        android:background="@color/blue_pcr"
         app:title="Pertemuan 7 - Fragment Lanjutan"
         app:titleTextColor="#FFFFFF"
         app:navigationIcon="@android:drawable/ic_menu_revert"
@@ -40,7 +40,7 @@
             android:layout_weight="1"
             android:text="Home"
             android:layout_marginEnd="8dp"
-            app:backgroundTint="#1E3A8A"/>
+            app:backgroundTint="@color/blue_pcr"/>
 
         <Button
             android:id="@+id/btnProfile"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Profile"
-            app:backgroundTint="#1E3A8A"/>
+            app:backgroundTint="@color/blue_pcr"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
