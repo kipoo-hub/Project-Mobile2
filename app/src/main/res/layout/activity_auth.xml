@@ -20,6 +20,7 @@
         android:layout_marginTop="60dp"/>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -100,5 +101,15 @@
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegisterGmail"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Register With Gmail"
+        android:textColor="@color/blue_pcr"
+        app:layout_constraintTop_toBottomOf="@id/cardLogin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

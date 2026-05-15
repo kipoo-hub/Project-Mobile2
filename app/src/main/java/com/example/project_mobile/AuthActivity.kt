@@ -7,6 +7,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.project_mobile.databinding.ActivityAuthBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class AuthActivity : AppCompatActivity() {
 
@@ -30,23 +31,40 @@ class AuthActivity : AppCompatActivity() {
 
         // Logika tombol login sesuai instruksi
         binding.btnLogin.setOnClickListener {
-            val username = binding.etUsername.text.toString()
-            val password = binding.etPassword.text.toString()
+            val inputUsername = binding.etUsername.text.toString()
+            val inputPassword = binding.etPassword.text.toString()
 
-            // 4. Cek kondisi Username = Password
-            if (username == password && username.isNotEmpty()) {
+            // Ambil data yang tersimpan dari SharedPreferences
+            val savedUsername = sharedPref.getString("saved_username", null)
+            val savedPassword = sharedPref.getString("saved_password", null)
 
-                // 5. Set isLogin menjadi true dan simpan username
+            // Kondisi sesuai soal b3:
+            // 1. username == password
+            // 2. ATAU sesuai dengan data yang tersimpan di SharedPreferences
+            val isLoginDefault = inputUsername == inputPassword && inputUsername.isNotEmpty()
+            val isLoginStored = inputUsername == savedUsername && inputPassword == savedPassword
+
+            if (isLoginDefault || isLoginStored) {
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLogin", true)
-                editor.putString("username", username)
+                editor.putString("username", inputUsername)
                 editor.apply()
 
                 pindahKeMain()
             } else {
-                // Tampilkan AlertDialog jika tidak sesuai
-                showErrorDialog()
+                // Tampilkan error menggunakan MaterialAlertDialog sesuai soal
+                MaterialAlertDialogBuilder(this)
+                    .setTitle("Login Gagal")
+                    .setMessage("Username atau Password salah")
+                    .setPositiveButton("OK", null)
+                    .show()
             }
+        }
+
+        // Fitur Register With Gmail: Navigasi ke halaman input email
+        binding.btnRegisterGmail.setOnClickListener {
+            val intent = Intent(this, InputEmailActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -59,7 +77,7 @@ class AuthActivity : AppCompatActivity() {
     private fun showErrorDialog() {
         AlertDialog.Builder(this).apply {
             setTitle("Login Gagal")
-            setMessage("Silahkan coba lagi") // Pesan sesuai instruksi image_2add3c.png
+            setMessage("Silahkan coba lagi")
             setPositiveButton("OK") { dialog, _ ->
                 dialog.dismiss()
             }
