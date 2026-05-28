@@ -23,8 +23,7 @@ class AboutFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbarAbout)
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = "About"
+        // Cukup biarkan BaseActivity yang mengatur Toolbar
     }
 
     override fun onDestroyView() {

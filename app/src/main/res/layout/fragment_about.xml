@@ -5,24 +5,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1F5F9"
+    android:background="#F8FAFC"
     tools:context=".About.AboutFragment">
 
-    <!-- Toolbar: Pastikan ID ini unik jika digunakan di fragment -->
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbarAbout"
+    <!-- Hapus MaterialToolbar kustom dan ganti dengan View kosong sebagai banner jika ingin tetap ada aksen biru -->
+    <View
+        android:id="@+id/headerBanner"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="60dp"
         android:background="@color/blue_pcr"
-        app:title="About"
-        app:titleTextColor="#FFFFFF"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/toolbarAbout"
+        android:clipToPadding="false"
+        android:paddingBottom="24dp"
+        app:layout_constraintTop_toBottomOf="@id/headerBanner"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
@@ -32,98 +31,108 @@
             android:gravity="center_horizontal"
             android:padding="24dp">
 
-            <!-- Foto Profil Mahasiswa -->
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/ivProfileAbout"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:layout_marginTop="20dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/logo"
-                app:strokeColor="@color/blue_pcr"
-                app:strokeWidth="2dp"
-                app:shapeAppearanceOverlay="@style/ShapeAppearance.MaterialComponents.MediumComponent" />
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="6dp"
+                app:strokeWidth="0dp">
 
-            <!-- Nama & Identitas -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/logo"
+                    android:padding="20dp"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="Logo Suara Rakyat" />
+            </com.google.android.material.card.MaterialCardView>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
                 android:text="Suara Rakyat"
                 android:textColor="#1E293B"
-                android:textSize="22sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sistem Informasi - PCR"
+                android:text="Versi 1.0.0 (Bina Desa)"
                 android:textColor="#64748B"
                 android:textSize="14sp" />
 
-            <!-- Card Informasi Project Suara Rakyat -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                app:cardBackgroundColor="@color/blue_pcr"
+                app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="24dp"
-                app:cardElevation="4dp"
+                app:cardElevation="2dp"
                 app:strokeWidth="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="24dp">
+                    android:padding="20dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tentang Project"
+                        android:text="Deskripsi Project"
                         android:textStyle="bold"
-                        android:textColor="#FFFFFF"
-                        android:textSize="18sp"/>
+                        android:textColor="@color/blue_pcr"
+                        android:textSize="16sp"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Aplikasi Suara Rakyat dikembangkan untuk memfasilitasi keluhan dan aspirasi masyarakat dalam program Bina Desa KM PCR-ROHIL."
-                        android:textColor="#FFFFFF"
+                        android:layout_marginTop="12dp"
+                        android:text="Aplikasi Suara Rakyat dikembangkan untuk memfasilitasi keluhan dan aspirasi masyarakat dalam program Bina Desa KM PCR-ROHIL. Dirancang dengan teknologi modern untuk memudahkan interaksi."
+                        android:textColor="#475569"
+                        android:textSize="15sp"
                         android:lineSpacingExtra="4dp"/>
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginVertical="16dp"
-                        android:background="#80FFFFFF" />
+                        android:layout_marginVertical="20dp"
+                        android:background="#F1F5F9" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Kontak Pengembang"
+                        android:text="Teknologi yang Digunakan"
                         android:textStyle="bold"
-                        android:textColor="#FFFFFF"/>
+                        android:textColor="@color/blue_pcr"
+                        android:textSize="16sp"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Email: taufiq24si@mahasiswa.pcr.ac.id\nLokasi: Pekanbaru, Riau"
-                        android:textColor="#FFFFFF" />
+                        android:layout_marginTop="12dp"
+                        android:text="• Android Native (Kotlin/Java)\n• Material Design 3\n• Firebase Integration\n• Modern Navigation"
+                        android:textColor="#475569"
+                        android:textSize="15sp"
+                        android:lineSpacingExtra="6dp"/>
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:layout_marginBottom="20dp"
-                android:text="v1.0.0 Stable Build"
-                android:textColor="#94A3B8"
-                android:textSize="12sp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnVisitWebsite"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="32dp"
+                android:text="Kunjungi Website Kami"
+                app:cornerRadius="16dp"
+                app:backgroundTint="@color/blue_pcr"
+                android:textAllCaps="false"
+                app:icon="@android:drawable/ic_menu_share"
+                app:iconGravity="textStart"/>
 
         </LinearLayout>
     </ScrollView>

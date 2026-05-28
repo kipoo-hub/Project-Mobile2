@@ -4,17 +4,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1F5F9">
+    android:background="#F8FAFC">
+
+    <View
+        android:id="@+id/moreHeaderBg"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@color/blue_pcr"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/tvMoreTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Menu Lainnya"
-        android:textColor="@color/blue_pcr"
+        android:textColor="#FFFFFF"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -22,57 +29,140 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="24dp"
-        app:cardBackgroundColor="@color/blue_pcr"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="24dp"
         app:cardElevation="4dp"
         app:strokeWidth="0dp"
-        app:layout_constraintTop_toBottomOf="@id/tvMoreTitle">
+        app:layout_constraintTop_toBottomOf="@id/moreHeaderBg">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="8dp">
 
-            <TextView
+            <!-- Item 1 -->
+            <LinearLayout
+                android:id="@+id/itemAbout"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="64dp"
+                android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:text="Tentang Kami"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:paddingStart="8dp"/>
+                android:paddingHorizontal="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_info_details"
+                    app:tint="@color/blue_pcr"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Tentang Kami"
+                    android:textColor="#1E293B"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="16dp"/>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@android:drawable/ic_media_play"
+                    app:tint="#CBD5E1"/>
+            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#80FFFFFF"/>
+                android:background="#F1F5F9"
+                android:layout_marginHorizontal="20dp"/>
 
-            <TextView
+            <!-- Item 2 -->
+            <LinearLayout
+                android:id="@+id/itemHelp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="64dp"
+                android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:text="Bantuan"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:paddingStart="8dp"/>
+                android:paddingHorizontal="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_help"
+                    app:tint="@color/blue_pcr"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Bantuan"
+                    android:textColor="#1E293B"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="16dp"/>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@android:drawable/ic_media_play"
+                    app:tint="#CBD5E1"/>
+            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#80FFFFFF"/>
+                android:background="#F1F5F9"
+                android:layout_marginHorizontal="20dp"/>
 
-            <TextView
+            <!-- Item 3 -->
+            <LinearLayout
+                android:id="@+id/itemSettings"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="64dp"
+                android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:text="Pengaturan Aplikasi"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:paddingStart="8dp"/>
+                android:paddingHorizontal="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_preferences"
+                    app:tint="@color/blue_pcr"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Pengaturan Aplikasi"
+                    android:textColor="#1E293B"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="16dp"/>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@android:drawable/ic_media_play"
+                    app:tint="#CBD5E1"/>
+            </LinearLayout>
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Versi 2.0.1 (Stable)"
+        android:textColor="#94A3B8"
+        android:textSize="12sp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

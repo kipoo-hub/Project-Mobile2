@@ -28,7 +28,7 @@ class ProfileFragment : Fragment() {
 
         // Setup Toolbar agar sinkron dengan BaseActivity
         val activity = requireActivity() as AppCompatActivity
-        activity.setSupportActionBar(binding.toolbar)
+        // Removed binding.toolbar as it's no longer in XML
         activity.supportActionBar?.title = "Profile"
 
         // Trigger Logout

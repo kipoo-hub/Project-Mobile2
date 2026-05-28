@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.project_mobile.About.AboutFragment
+import com.example.project_mobile.Message.MessageFragment
 import com.example.project_mobile.databinding.ActivityBaseBinding
 import com.example.project_mobile.Home.HomeFragment
 import com.example.project_mobile.Profile.ProfileFragment
@@ -28,32 +29,30 @@ class BaseActivity : AppCompatActivity() {
 
         // 3. Listener klik Bottom Navigation
         binding.bottomNavigation.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_home -> {
-                    replaceFragment(HomeFragment(), "Home")
-                    true
-                }
-                R.id.nav_about -> {
-                    replaceFragment(AboutFragment(), "About")
-                    true
-                }
-                R.id.nav_profile -> {
-                    replaceFragment(ProfileFragment(), "Profile")
-                    true
-                }
-                else -> false
+            val fragment = when (item.itemId) {
+                R.id.nav_home -> HomeFragment()
+                R.id.nav_about -> AboutFragment()
+                R.id.nav_message -> MessageFragment()
+                R.id.nav_profile -> ProfileFragment()
+                else -> null
             }
+
+            fragment?.let {
+                // Mengambil title langsung dari menu item yang diklik
+                replaceFragment(it, item.title.toString())
+                true
+            } ?: false
         }
     }
 
     // Fungsi Replace Fragment
     private fun replaceFragment(fragment: Fragment, title: String) {
-        // Mengubah judul pada Toolbar secara dinamis
+        // Update judul di kedua tempat untuk memastikan sinkronisasi visual
+        binding.toolbar.title = title
         supportActionBar?.title = title
 
         supportFragmentManager.beginTransaction()
             .replace(binding.fragmentContainer.id, fragment)
-            // .addToBackStack(null) // Opsional: Jangan gunakan ini pada BottomNav agar tidak membingungkan user
             .commit()
     }
 }

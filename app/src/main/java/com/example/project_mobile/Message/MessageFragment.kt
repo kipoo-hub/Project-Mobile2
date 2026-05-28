@@ -19,6 +19,34 @@ class MessageFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // 5. Definisi list data message
+        val listMessage = listOf(
+            MessageModel("https://i.pravatar.cc/150?u=alya", "Alya", "Halo! Apa kabar?"),
+            MessageModel("https://i.pravatar.cc/150?u=budi", "Budi", "Sudah makan?"),
+            MessageModel("https://i.pravatar.cc/150?u=citra", "Citra", "Jangan lupa tugasnya ya!"),
+            MessageModel("https://i.pravatar.cc/150?u=dika", "Dika", "Besok kita rapat jam 9"),
+            MessageModel("https://i.pravatar.cc/150?u=eka", "Eka", "Nice job kemarin!"),
+            MessageModel("https://i.pravatar.cc/150?u=fajar", "Fajar", "Otw lokasi ya.")
+        )
+
+        // 6 & 7. Buat & Terapkan MessageAdapter
+        val adapter = MessageAdapter(requireContext(), listMessage)
+        binding.lvMessage.adapter = adapter
+
+        // 8. Terapkan OnClick pada setiap item
+        binding.lvMessage.setOnItemClickListener { _, _, position, _ ->
+            val selectedMessage = listMessage[position]
+            android.widget.Toast.makeText(
+                requireContext(),
+                "Menghubungi ${selectedMessage.name}...",
+                android.widget.Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
