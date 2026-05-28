@@ -2,24 +2,26 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F1F5F9"
     android:padding="32dp">
 
-    <ImageView
-        android:id="@+id/ivLogo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@android:drawable/ic_lock_lock"
-        app:tint="@color/blue_pcr"
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Input Email"
+        android:textColor="@color/blue_pcr"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="60dp"/>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -27,7 +29,7 @@
         app:cardCornerRadius="32dp"
         app:cardElevation="8dp"
         app:strokeWidth="0dp"
-        app:layout_constraintTop_toBottomOf="@id/ivLogo">
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,22 +37,12 @@
             android:orientation="vertical"
             android:padding="32dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Welcome Back"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:layout_marginBottom="32dp"/>
-
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilUsername"
+                android:id="@+id/tilEmail"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Username"
+                android:hint="Email"
                 app:hintTextColor="#E0F7FA"
                 app:boxStrokeColor="#FFFFFF"
                 app:boxCornerRadiusTopStart="16dp"
@@ -58,42 +50,19 @@
                 app:boxStrokeWidth="1dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etUsername"
+                    android:id="@+id/etEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:textColor="#FFFFFF" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilPassword"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:hint="Password"
-                app:hintTextColor="#E0F7FA"
-                app:boxStrokeColor="#FFFFFF"
-                app:boxCornerRadiusTopStart="16dp"
-                app:boxCornerRadiusBottomEnd="16dp"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="#E0F7FA"
-                app:boxStrokeWidth="1dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:textColor="#FFFFFF" />
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/white" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnLogin"
+                android:id="@+id/btnNext"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="32dp"
-                android:text="Login"
+                android:text="Lanjutkan"
                 android:textColor="@color/blue_pcr"
                 app:cornerRadius="16dp"
                 app:backgroundTint="#FFFFFF" />

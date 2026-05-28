@@ -2,20 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
-    <!-- Warna Utama Tema Bina Desa -->
     <color name="blue_pcr">#1E3A8A</color>
     <color name="bg_light">#F1F5F9</color>
     <color name="text_primary">#1E293B</color>
     <color name="text_secondary">#64748B</color>
-
-    <!-- Warna Button Pertemuan sesuai image_930d52.png -->
     <color name="orange_p2">#F97316</color>
     <color name="slate_p3">#334155</color>
     <color name="navy_p4">#1E3A8A</color>
     <color name="emerald_p5">#10B981</color>
     <color name="indigo_p6">#6366F1</color>
-
-    <!-- Warna Status/Logout -->
     <color name="red_logout">#DC2626</color>
 </resources>

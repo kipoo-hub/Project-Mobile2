@@ -34,6 +34,15 @@
         <activity
             android:name=".AuthActivity"
             android:exported="false" />
+
+        <!-- Activity Baru -->
+        <activity
+            android:name=".InputEmailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrationActivity"
+            android:exported="false" />
+
         <activity
             android:name=".Home.Pertemuan4.Custom2Activity"
             android:exported="false" />
