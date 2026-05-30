@@ -60,6 +60,11 @@ class HomeFragment : Fragment() {
         binding.btnToSixth.setOnClickListener {
             startActivity(Intent(requireContext(), SplashScreenActivity::class.java))
         }
+
+        // Pertemuan 10 - Tab Layout
+        binding.btnToTenth.setOnClickListener {
+            startActivity(Intent(requireContext(), com.example.project_mobile.Home.pertemuan_10.TenthActivity::class.java))
+        }
     }
 
     override fun onDestroyView() {

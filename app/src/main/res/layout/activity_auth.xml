@@ -98,6 +98,18 @@
                 app:cornerRadius="16dp"
                 app:backgroundTint="#FFFFFF" />
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRegisterGmail"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                android:text="Register With Gmail"
+                android:textColor="#FFFFFF"
+                app:strokeColor="#FFFFFF"
+                app:cornerRadius="16dp"
+                android:textAllCaps="false"/>
+
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 

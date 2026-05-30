@@ -45,6 +45,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation("com.google.android.material:material:1.9.0")
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.recyclerview)
     implementation(libs.glide)
     annotationProcessor(libs.glide.compiler)
     testImplementation(libs.junit)
