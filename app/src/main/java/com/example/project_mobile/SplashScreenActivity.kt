@@ -20,17 +20,24 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         sharedPref = getSharedPreferences("UserSession", Context.MODE_PRIVATE)
+        
+        // RESET PAKSA (Hapus baris ini setelah Onboarding muncul sekali)
+        // sharedPref.edit().putBoolean("onboardingFinished", false).apply()
 
         Handler(Looper.getMainLooper()).postDelayed({
 
             val isLogin = sharedPref.getBoolean("isLogin", false)
 
             if (isLogin) {
-                // User sudah login -> MainActivity
                 startActivity(Intent(this, BaseActivity::class.java))
             } else {
-                // User belum login -> AuthActivity
-                startActivity(Intent(this, AuthActivity::class.java))
+                val onboardingFinished = sharedPref.getBoolean("onboardingFinished", false)
+                if (onboardingFinished) {
+                    startActivity(Intent(this, AuthActivity::class.java))
+                } else {
+                    // Jika belum pernah onboarding, arahkan ke Tutorial
+                    startActivity(Intent(this, com.example.project_mobile.tutorial.TutorialMessageActivity::class.java))
+                }
             }
             finish()
         }, 3000)

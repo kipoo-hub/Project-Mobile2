@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -63,6 +65,9 @@
             android:exported="false" />
         <activity
             android:name=".Home.pertemuan_10.TenthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tutorial.TutorialMessageActivity"
             android:exported="false" />
 
     </application>

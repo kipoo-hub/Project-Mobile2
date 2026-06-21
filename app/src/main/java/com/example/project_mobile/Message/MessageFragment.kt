@@ -16,7 +16,23 @@ class MessageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMessageBinding.inflate(inflater, container, false)
+        setHasOptionsMenu(true)
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: android.view.Menu, inflater: android.view.MenuInflater) {
+        inflater.inflate(com.example.project_mobile.R.menu.menu_message, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: android.view.MenuItem): Boolean {
+        return when (item.itemId) {
+            com.example.project_mobile.R.id.action_tutorial -> {
+                startActivity(android.content.Intent(requireContext(), com.example.project_mobile.tutorial.TutorialMessageActivity::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

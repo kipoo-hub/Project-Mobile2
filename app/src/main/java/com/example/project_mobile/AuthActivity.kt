@@ -24,7 +24,16 @@ class AuthActivity : AppCompatActivity() {
         // 2. Definisi SharedPreferences dengan nama "UserSession"
         sharedPref = getSharedPreferences("UserSession", Context.MODE_PRIVATE)
 
-        // 3. Kondisi jika isLogin bernilai true, langsung ke MainActivity
+        // 3. Cek Onboarding dulu sebelum Login
+        val onboardingFinished = sharedPref.getBoolean("onboardingFinished", false)
+        if (!onboardingFinished) {
+            val intent = Intent(this, com.example.project_mobile.tutorial.TutorialMessageActivity::class.java)
+            startActivity(intent)
+            finish()
+            return
+        }
+
+        // 4. Kondisi jika isLogin bernilai true, langsung ke MainActivity
         if (sharedPref.getBoolean("isLogin", false)) {
             pindahKeMain()
         }
