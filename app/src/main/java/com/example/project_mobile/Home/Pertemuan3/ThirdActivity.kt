@@ -1,21 +1,34 @@
 // 1. Sesuaikan package dengan folder tempat file ini berada (Pertemuan3)
 package com.example.project_mobile.Home.Pertemuan3
 
+import android.Manifest
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-// 2. IMPORT YANG BENAR: Pastikan hanya mengimpor dari project_mobile
 import com.example.project_mobile.databinding.ActivityThirdBinding
-// Perhatikan: Pastikan DashboardActivity juga sudah dipindah ke project_mobile
 import com.example.project_mobile.Home.Pertemuan4.DashboardActivity
+import com.example.project_mobile.utils.NotificationHelper
+import com.example.project_mobile.utils.PermissionHelper
+import com.example.project_mobile.utils.ReminderHelper
+import java.util.Calendar
 
 class ThirdActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityThirdBinding
+
+    private val notificationPermissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+            if (isGranted) {
+                Toast.makeText(this, "Notifikasi diizinkan", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Notifikasi ditolak", Toast.LENGTH_SHORT).show()
+            }
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,17 +45,46 @@ class ThirdActivity : AppCompatActivity() {
             insets
         }
 
+        if (PermissionHelper.isNotificationPermissionRequired()) {
+            val permission = Manifest.permission.POST_NOTIFICATIONS
+            if (!PermissionHelper.hasPermission(this, permission)) {
+                PermissionHelper.requestPermission(
+                    notificationPermissionLauncher,
+                    permission
+                )
+            }
+        }
+
         binding.btnLogin.setOnClickListener {
             val username = binding.etUsername.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
 
             if (username.isNotEmpty() && password.isNotEmpty()) {
-                // Berpindah ke DashboardActivity di dalam project_mobile
                 val intent = Intent(this, DashboardActivity::class.java)
-                startActivity(intent)
+                // startActivity(intent)
 
-                Toast.makeText(this, "Welcome to Mata Cantik Travel!", Toast.LENGTH_SHORT).show()
-                finish()
+                // NotificationHelper.showNotification(
+                //    this,
+                //    "Pesanan Anda",
+                //    "Halo $username, Pesanan Anda Sedang Diproses",
+                //    intent
+                // )
+
+                val calendar = Calendar.getInstance().apply {
+                    add(Calendar.MINUTE, 1) // Tambah 1 menit dari sekarang
+                }
+
+                ReminderHelper.setReminder(
+                    context = this,
+                    hour = calendar.get(Calendar.HOUR_OF_DAY),
+                    minute = calendar.get(Calendar.MINUTE),
+                    title = "Reminder 1 Menit",
+                    message = "Halo $username, reminder ini muncul 1 menit setelah Anda klik tombol",
+                    targetActivity = ThirdResultActivity::class.java
+                )
+
+                Toast.makeText(this, "Silahkan tunggu 1 Menit untuk menerima Notifikasi", Toast.LENGTH_SHORT).show()
+                // finish()
             } else {
                 if (username.isEmpty()) binding.etUsername.error = "Masukkan Username/Email"
                 if (password.isEmpty()) binding.etPassword.error = "Masukkan Password"

@@ -122,6 +122,9 @@ class HomeFragment : Fragment() {
         binding.btnToTenth.setOnClickListener {
             startActivity(Intent(requireContext(), com.example.project_mobile.Home.pertemuan_10.TenthActivity::class.java))
         }
+        binding.btnToThirteenth.setOnClickListener {
+            startActivity(Intent(requireContext(), com.example.project_mobile.Home.pertemuan_13.ThirteenthActivity::class.java))
+        }
     }
 
     override fun onDestroyView() {
