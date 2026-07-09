@@ -47,11 +47,18 @@ class BaseActivity : AppCompatActivity() {
 
     // Fungsi Replace Fragment
     private fun replaceFragment(fragment: Fragment, title: String) {
+        // Cek apakah fragment yang aktif saat ini sama dengan fragment yang dituju
+        val currentFragment = supportFragmentManager.findFragmentById(binding.fragmentContainer.id)
+        if (currentFragment != null && currentFragment::class.java == fragment::class.java) {
+            return
+        }
+
         // Update judul di kedua tempat untuk memastikan sinkronisasi visual
         binding.toolbar.title = title
         supportActionBar?.title = title
 
         supportFragmentManager.beginTransaction()
+            .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
             .replace(binding.fragmentContainer.id, fragment)
             .commit()
     }

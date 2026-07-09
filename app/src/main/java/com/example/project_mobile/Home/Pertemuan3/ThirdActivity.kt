@@ -10,9 +10,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.project_mobile.databinding.ActivityThirdBinding
 import com.example.project_mobile.Home.Pertemuan4.DashboardActivity
-import com.example.project_mobile.utils.NotificationHelper
+import com.example.project_mobile.databinding.ActivityThirdBinding
 import com.example.project_mobile.utils.PermissionHelper
 import com.example.project_mobile.utils.ReminderHelper
 import java.util.Calendar
@@ -60,31 +59,27 @@ class ThirdActivity : AppCompatActivity() {
             val password = binding.etPassword.text.toString().trim()
 
             if (username.isNotEmpty() && password.isNotEmpty()) {
+                // 1. Alur Login: Pindah ke Dashboard
                 val intent = Intent(this, DashboardActivity::class.java)
-                // startActivity(intent)
+                startActivity(intent)
 
-                // NotificationHelper.showNotification(
-                //    this,
-                //    "Pesanan Anda",
-                //    "Halo $username, Pesanan Anda Sedang Diproses",
-                //    intent
-                // )
-
+                // 2. Alur Reminder: Setel pengingat 1 menit
                 val calendar = Calendar.getInstance().apply {
-                    add(Calendar.MINUTE, 1) // Tambah 1 menit dari sekarang
+                    add(Calendar.MINUTE, 1)
                 }
 
                 ReminderHelper.setReminder(
                     context = this,
+                    reminderId = System.currentTimeMillis().toInt(), // ID unik
                     hour = calendar.get(Calendar.HOUR_OF_DAY),
                     minute = calendar.get(Calendar.MINUTE),
-                    title = "Reminder 1 Menit",
-                    message = "Halo $username, reminder ini muncul 1 menit setelah Anda klik tombol",
+                    title = "Reminder Login",
+                    message = "Halo $username, Anda berhasil login 1 menit yang lalu.",
                     targetActivity = ThirdResultActivity::class.java
                 )
 
-                Toast.makeText(this, "Silahkan tunggu 1 Menit untuk menerima Notifikasi", Toast.LENGTH_SHORT).show()
-                // finish()
+                Toast.makeText(this, "Login Berhasil! Reminder disetel 1 menit.", Toast.LENGTH_SHORT).show()
+                finish()
             } else {
                 if (username.isEmpty()) binding.etUsername.error = "Masukkan Username/Email"
                 if (password.isEmpty()) binding.etPassword.error = "Masukkan Password"
